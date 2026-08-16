@@ -14,7 +14,7 @@
       </div>
       <div v-show="!uiStore.sidebarCollapsed" class="flex flex-col min-w-0">
         <span class="text-sm font-bold text-primary tracking-wide leading-none">
-          HotelOS
+          Hotel Test
         </span>
         <span class="mt-1 text-[10px] font-semibold text-accent uppercase tracking-wider truncate">
           {{ activeRoleTitle }}

@@ -1,7 +1,7 @@
 {
   "name": "hotosos",
   "version": "1.0.0",
-  "description": "HotelOS — Hotel Management Admin Panel",
+  "description": "Hotel Test — Hotel Management Admin Panel",
   "license": "MIT",
   "type": "module",
   "scripts": {

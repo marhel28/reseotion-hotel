@@ -29,7 +29,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: "HotelOS",
+      title: "Hotel Test",
       htmlAttrs: {
         lang: "en"
       }
