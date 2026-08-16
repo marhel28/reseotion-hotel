@@ -1,0 +1,613 @@
+export type GuestStatus = 'active' | 'inactive' | 'vip'
+
+export interface GuestPreference {
+  roomType?: string
+  floor?: string
+  smoking?: boolean
+  notes?: string
+}
+
+export interface Guest {
+  id: number
+  fullName: string
+  email: string
+  phone: string
+  country: string
+  idNumber: string
+  totalStays: number
+  totalSpent: number
+  lastStay: string
+  vip: boolean
+  status: GuestStatus
+  preferences: GuestPreference
+  notes: string[]
+  initials: string
+}
+
+export const mockGuests: Guest[] = [
+  // ==================== 8 INDONESIAN GUESTS ====================
+  {
+    id: 1,
+    fullName: 'Aditya Pratama',
+    email: 'aditya.pratama@gmail.com',
+    phone: '+62 812-3456-7890',
+    country: 'Indonesia',
+    idNumber: '3401120512980002',
+    totalStays: 32,
+    totalSpent: 78_400_000,
+    lastStay: '2026-08-10',
+    vip: true,
+    status: 'vip',
+    preferences: {
+      roomType: 'Executive Suite',
+      floor: 'High floor',
+      smoking: false,
+      notes: 'Prefers late checkout when available',
+    },
+    notes: [
+      'Prefers extra pillows on the bed',
+      'Celebrating anniversary every August',
+      'Loyal guest — always books direct',
+    ],
+    initials: 'AP',
+  },
+  {
+    id: 2,
+    fullName: 'Siti Rahmawati',
+    email: 'siti.rahma@yahoo.co.id',
+    phone: '+62 857-2345-6781',
+    country: 'Indonesia',
+    idNumber: '3518115203950004',
+    totalStays: 18,
+    totalSpent: 42_750_000,
+    lastStay: '2026-07-22',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Deluxe Double',
+      floor: 'Mid floor',
+      smoking: false,
+    },
+    notes: [
+      'Allergic to feather bedding — use hypoallergenic',
+      'Often requests airport transfer',
+    ],
+    initials: 'SR',
+  },
+  {
+    id: 3,
+    fullName: 'Budi Santoso',
+    email: 'budi.santoso@outlook.co.id',
+    phone: '+62 878-9012-3456',
+    country: 'Indonesia',
+    idNumber: '3374011806900001',
+    totalStays: 8,
+    totalSpent: 19_600_000,
+    lastStay: '2026-06-15',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Standard Twin',
+      smoking: true,
+      notes: 'Smoking room preferred',
+    },
+    notes: [
+      'Business traveler — invoices to PT Nusantara',
+    ],
+    initials: 'BS',
+  },
+  {
+    id: 4,
+    fullName: 'Dewi Lestari',
+    email: 'dewi.lestari@gmail.com',
+    phone: '+62 813-4567-8902',
+    country: 'Indonesia',
+    idNumber: '3273064410930003',
+    totalStays: 45,
+    totalSpent: 112_000_000,
+    lastStay: '2026-08-14',
+    vip: true,
+    status: 'vip',
+    preferences: {
+      roomType: 'Presidential Suite',
+      floor: 'Top floor',
+      smoking: false,
+      notes: 'Highest loyalty tier guest',
+    },
+    notes: [
+      'Allergic to feather pillows',
+      'Prefers welcome fruit basket',
+      'Requires early check-in (12:00)',
+    ],
+    initials: 'DL',
+  },
+  {
+    id: 5,
+    fullName: 'Muhammad Fauzi',
+    email: 'm.fauzi@gmail.com',
+    phone: '+62 821-5678-9013',
+    country: 'Indonesia',
+    idNumber: '3403092505870005',
+    totalStays: 5,
+    totalSpent: 11_200_000,
+    lastStay: '2026-05-30',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Deluxe King',
+      smoking: false,
+    },
+    notes: [],
+    initials: 'MF',
+  },
+  {
+    id: 6,
+    fullName: 'Rina Kartika',
+    email: 'rina.kartika@gmail.com',
+    phone: '+62 856-7890-1234',
+    country: 'Indonesia',
+    idNumber: '3505126002910002',
+    totalStays: 12,
+    totalSpent: 34_800_000,
+    lastStay: '2026-07-08',
+    vip: false,
+    status: 'active',
+    preferences: {
+      floor: 'Low floor',
+      smoking: false,
+      notes: 'Prefers room near elevator',
+    },
+    notes: [
+      'Prefers firm mattress',
+      'Traveling with elderly mother sometimes',
+    ],
+    initials: 'RK',
+  },
+  {
+    id: 7,
+    fullName: 'Eko Prasetyo',
+    email: 'eko.prasetyo@yahoo.com',
+    phone: '+62 815-8901-2345',
+    country: 'Indonesia',
+    idNumber: '3301041107850007',
+    totalStays: 2,
+    totalSpent: 4_500_000,
+    lastStay: '2026-02-20',
+    vip: false,
+    status: 'inactive',
+    preferences: {
+      roomType: 'Standard Double',
+      smoking: false,
+    },
+    notes: [
+      'Last visit had noise complaint — assign quiet room',
+    ],
+    initials: 'EP',
+  },
+  {
+    id: 8,
+    fullName: 'Anggraini Putri',
+    email: 'anggraini.putri@gmail.com',
+    phone: '+62 811-9012-3456',
+    country: 'Indonesia',
+    idNumber: '3201144308960001',
+    totalStays: 21,
+    totalSpent: 67_300_000,
+    lastStay: '2026-08-02',
+    vip: true,
+    status: 'vip',
+    preferences: {
+      roomType: 'Junior Suite',
+      floor: 'High floor',
+      smoking: false,
+      notes: 'Requests extra towels',
+    },
+    notes: [
+      'Vegetarian — coordinate with F&B',
+      'Frequent spa user',
+    ],
+    initials: 'AP',
+  },
+
+  // ==================== 4 AMERICAN GUESTS ====================
+  {
+    id: 9,
+    fullName: 'John Anderson',
+    email: 'j.anderson@gmail.com',
+    phone: '+1 415-555-0142',
+    country: 'United States',
+    idNumber: '539281746',
+    totalStays: 14,
+    totalSpent: 58_900_000,
+    lastStay: '2026-07-28',
+    vip: true,
+    status: 'vip',
+    preferences: {
+      roomType: 'Executive King',
+      floor: 'High floor',
+      smoking: false,
+    },
+    notes: [
+      'Prefers firm pillows',
+      'Requests late checkout frequently',
+    ],
+    initials: 'JA',
+  },
+  {
+    id: 10,
+    fullName: 'Sarah Mitchell',
+    email: 'sarah.mitchell@hotmail.com',
+    phone: '+1 212-555-0198',
+    country: 'United States',
+    idNumber: '761209553',
+    totalStays: 6,
+    totalSpent: 22_400_000,
+    lastStay: '2026-06-19',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Deluxe Double',
+      smoking: false,
+      notes: 'Prefers room with bathtub',
+    },
+    notes: [
+      'Celebrating birthday — arrange cake',
+    ],
+    initials: 'SM',
+  },
+  {
+    id: 11,
+    fullName: 'Michael Thompson',
+    email: 'm.thompson@yahoo.com',
+    phone: '+1 312-555-0176',
+    country: 'United States',
+    idNumber: '488710329',
+    totalStays: 3,
+    totalSpent: 9_800_000,
+    lastStay: '2026-05-05',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Standard Twin',
+      smoking: false,
+    },
+    notes: [],
+    initials: 'MT',
+  },
+  {
+    id: 12,
+    fullName: 'Emily Carter',
+    email: 'emily.carter@gmail.com',
+    phone: '+1 617-555-0133',
+    country: 'United States',
+    idNumber: '620455891',
+    totalStays: 1,
+    totalSpent: 3_200_000,
+    lastStay: '2026-03-12',
+    vip: false,
+    status: 'inactive',
+    preferences: {
+      roomType: 'Standard Double',
+      smoking: false,
+    },
+    notes: [
+      'First-time guest — welcome note appreciated',
+    ],
+    initials: 'EC',
+  },
+
+  // ==================== 2 JAPANESE GUESTS ====================
+  {
+    id: 13,
+    fullName: 'Yuki Tanaka',
+    email: 'y.tanaka@docomo.ne.jp',
+    phone: '+81 90-1234-5678',
+    country: 'Japan',
+    idNumber: 'TK0928471',
+    totalStays: 27,
+    totalSpent: 95_600_000,
+    lastStay: '2026-08-06',
+    vip: true,
+    status: 'vip',
+    preferences: {
+      roomType: 'Japanese Tatami Suite',
+      floor: 'Quiet floor',
+      smoking: false,
+      notes: 'Prefers Japanese breakfast',
+    },
+    notes: [
+      'Allergic to seafood — notify restaurant',
+      'Requests green tea set in room',
+      'Celebrates cherry blossom season stays',
+    ],
+    initials: 'YT',
+  },
+  {
+    id: 14,
+    fullName: 'Kenji Sato',
+    email: 'k.sato@gmail.com',
+    phone: '+81 80-9876-5432',
+    country: 'Japan',
+    idNumber: 'SN1846302',
+    totalStays: 9,
+    totalSpent: 28_700_000,
+    lastStay: '2026-07-15',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Deluxe King',
+      smoking: false,
+    },
+    notes: [
+      'Prefers quiet room away from elevator',
+    ],
+    initials: 'KS',
+  },
+
+  // ==================== 2 AUSTRALIAN GUESTS ====================
+  {
+    id: 15,
+    fullName: 'James Wilson',
+    email: 'j.wilson@bigpond.com',
+    phone: '+61 412 345 678',
+    country: 'Australia',
+    idNumber: 'PA8291045',
+    totalStays: 11,
+    totalSpent: 39_200_000,
+    lastStay: '2026-06-28',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Deluxe King',
+      floor: 'Mid floor',
+      smoking: false,
+    },
+    notes: [
+      'Enjoys gym — provide gym pass',
+      'Prefers early breakfast (6:30 AM)',
+    ],
+    initials: 'JW',
+  },
+  {
+    id: 16,
+    fullName: 'Charlotte Brown',
+    email: 'charlotte.b@gmail.com',
+    phone: '+61 498 765 432',
+    country: 'Australia',
+    idNumber: 'PA9032718',
+    totalStays: 4,
+    totalSpent: 14_500_000,
+    lastStay: '2026-04-22',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Standard Double',
+      smoking: false,
+      notes: 'Prefers balcony room',
+    },
+    notes: [],
+    initials: 'CB',
+  },
+
+  // ==================== 2 GERMAN GUESTS ====================
+  {
+    id: 17,
+    fullName: 'Hans Mueller',
+    email: 'h.mueller@web.de',
+    phone: '+49 170-1234567',
+    country: 'Germany',
+    idNumber: 'C01X00T47G',
+    totalStays: 16,
+    totalSpent: 52_100_000,
+    lastStay: '2026-07-30',
+    vip: true,
+    status: 'vip',
+    preferences: {
+      roomType: 'Executive Suite',
+      floor: 'High floor',
+      smoking: false,
+      notes: 'Prefers German-speaking staff if available',
+    },
+    notes: [
+      'Requires iron and ironing board in room',
+      'Prefers extra blankets',
+    ],
+    initials: 'HM',
+  },
+  {
+    id: 18,
+    fullName: 'Katrin Weber',
+    email: 'katrin.weber@gmail.com',
+    phone: '+49 151-9876543',
+    country: 'Germany',
+    idNumber: 'L01X00F92H',
+    totalStays: 7,
+    totalSpent: 25_300_000,
+    lastStay: '2026-05-18',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Deluxe Double',
+      smoking: false,
+    },
+    notes: [
+      'Vegan — coordinate meal options with kitchen',
+    ],
+    initials: 'KW',
+  },
+
+  // ==================== 2 SINGAPOREAN GUESTS ====================
+  {
+    id: 19,
+    fullName: 'Wei Lin Tan',
+    email: 'weilin.tan@gmail.com',
+    phone: '+65 9123 4567',
+    country: 'Singapore',
+    idNumber: 'S8392017A',
+    totalStays: 19,
+    totalSpent: 63_800_000,
+    lastStay: '2026-08-01',
+    vip: true,
+    status: 'vip',
+    preferences: {
+      roomType: 'Club Room',
+      floor: 'Club floor',
+      smoking: false,
+      notes: 'Club lounge access required',
+    },
+    notes: [
+      'Prefers sparkling water in minibar',
+      'Business traveler — needs fast WiFi',
+    ],
+    initials: 'WT',
+  },
+  {
+    id: 20,
+    fullName: 'Sarah Lee',
+    email: 'sarah.lee@outlook.com.sg',
+    phone: '+65 8765 4321',
+    country: 'Singapore',
+    idNumber: 'S9145826B',
+    totalStays: 10,
+    totalSpent: 36_400_000,
+    lastStay: '2026-07-11',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Deluxe King',
+      smoking: false,
+    },
+    notes: [
+      'Requests fruit platter on arrival',
+    ],
+    initials: 'SL',
+  },
+
+  // ==================== 1 MALAYSIAN ====================
+  {
+    id: 21,
+    fullName: 'Ahmad bin Ismail',
+    email: 'ahmad.ismail@gmail.com',
+    phone: '+60 12-345 6789',
+    country: 'Malaysia',
+    idNumber: '870415-01-5678',
+    totalStays: 13,
+    totalSpent: 47_900_000,
+    lastStay: '2026-06-09',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Halal-certified Room',
+      floor: 'Mid floor',
+      smoking: false,
+      notes: 'Halal meals only — notify F&B',
+    },
+    notes: [
+      'Halal dietary requirements',
+      'Prefers prayer mat in room',
+    ],
+    initials: 'AI',
+  },
+
+  // ==================== 1 DUTCH ====================
+  {
+    id: 22,
+    fullName: 'Sophie de Vries',
+    email: 's.devries@hotmail.nl',
+    phone: '+31 6-12345678',
+    country: 'Netherlands',
+    idNumber: 'NTRK019283',
+    totalStays: 5,
+    totalSpent: 18_200_000,
+    lastStay: '2026-04-30',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Deluxe Double',
+      smoking: false,
+    },
+    notes: [
+      'Prefers eco-friendly amenities',
+      'Allergic to latex gloves — housekeeping note',
+    ],
+    initials: 'SV',
+  },
+
+  // ==================== 1 SOUTH KOREAN ====================
+  {
+    id: 23,
+    fullName: 'Park Min-jun',
+    email: 'mj.park@naver.com',
+    phone: '+82 10-2345-6789',
+    country: 'South Korea',
+    idNumber: 'M92837461',
+    totalStays: 15,
+    totalSpent: 54_700_000,
+    lastStay: '2026-07-25',
+    vip: true,
+    status: 'vip',
+    preferences: {
+      roomType: 'Korean Ondol Suite',
+      floor: 'High floor',
+      smoking: false,
+      notes: 'Prefers Korean breakfast options',
+    },
+    notes: [
+      'Requests Korean newspaper if available',
+      'Frequent sauna user',
+    ],
+    initials: 'PM',
+  },
+
+  // ==================== 1 INDIAN ====================
+  {
+    id: 24,
+    fullName: 'Priya Sharma',
+    email: 'priya.sharma@gmail.com',
+    phone: '+91 98765 43210',
+    country: 'India',
+    idNumber: 'J83294710',
+    totalStays: 8,
+    totalSpent: 29_600_000,
+    lastStay: '2026-06-02',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Deluxe King',
+      floor: 'Mid floor',
+      smoking: false,
+      notes: 'Vegetarian meals required',
+    },
+    notes: [
+      'Vegetarian — coordinate with F&B',
+      'Celebrating anniversary — arrange flowers',
+    ],
+    initials: 'PS',
+  },
+
+  // ==================== 1 FRENCH ====================
+  {
+    id: 25,
+    fullName: 'Pierre Dupont',
+    email: 'p.dupont@gmail.com',
+    phone: '+33 6 12 34 56 78',
+    country: 'France',
+    idNumber: '18AB39204',
+    totalStays: 12,
+    totalSpent: 48_500_000,
+    lastStay: '2026-07-19',
+    vip: false,
+    status: 'active',
+    preferences: {
+      roomType: 'Premier Suite',
+      floor: 'High floor',
+      smoking: false,
+      notes: 'Prefers room with city view',
+    },
+    notes: [
+      'Prefers French press coffee in room',
+      'Enjoys wine — recommend local vineyard tour',
+    ],
+    initials: 'PD',
+  },
+]
