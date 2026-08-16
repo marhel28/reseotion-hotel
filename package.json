@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^4.5.2",
+    "better-sqlite3": "^13.0.3",
     "daisyui": "^5.7.17",
     "lucide-vue-next": "^1.0.0"
   },
