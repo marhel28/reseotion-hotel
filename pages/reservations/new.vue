@@ -22,7 +22,7 @@
       <div class="lg:col-span-7 space-y-5">
 
         <!-- Card 1: Tanggal Menginap & Pilih Kamar -->
-        <div class="rounded-xl border border-border bg-surface p-5 shadow-sm space-y-4">
+        <div class="rounded-lg border border-border bg-surface p-5 space-y-4">
           <div class="flex items-center gap-2 border-b border-border pb-2.5">
             <Icon name="calendar" :size="16" class="text-primary" />
             <h2 class="text-sm font-bold text-text-primary uppercase tracking-wide">1. Tanggal & Pilihan Kamar</h2>
@@ -97,7 +97,7 @@
         </div>
 
         <!-- Card 2: Data Tamu (Tanpa Wajib Email) -->
-        <div class="rounded-xl border border-border bg-surface p-5 shadow-sm space-y-4">
+        <div class="rounded-lg border border-border bg-surface p-5 space-y-4">
           <div class="flex items-center gap-2 border-b border-border pb-2.5">
             <Icon name="user" :size="16" class="text-primary" />
             <h2 class="text-sm font-bold text-text-primary uppercase tracking-wide">2. Data Tamu Pemesan</h2>
@@ -157,7 +157,7 @@
 
       <!-- KOLOM KANAN (5 Cols): Ringkasan Pembayaran & Eksekusi -->
       <div class="lg:col-span-5 space-y-5">
-        <div class="rounded-xl border border-border bg-surface p-5 shadow-sm space-y-4 sticky top-6">
+        <div class="rounded-lg border border-border bg-surface p-5 space-y-4 sticky top-6">
           <div class="flex items-center gap-2 border-b border-border pb-2.5">
             <Icon name="credit-card" :size="16" class="text-primary" />
             <h2 class="text-sm font-bold text-text-primary uppercase tracking-wide">3. Pembayaran & Rincian</h2>

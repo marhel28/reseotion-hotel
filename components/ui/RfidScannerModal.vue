@@ -1,10 +1,10 @@
 <template>
   <dialog ref="dialogRef" class="modal">
-    <div class="modal-box bg-surface border border-border max-w-md rounded-2xl p-6 shadow-2xl space-y-5">
+    <div class="modal-box bg-surface border border-border max-w-md rounded-lg p-5 space-y-4">
       <!-- Header -->
       <div class="flex items-center justify-between border-b border-border pb-3">
         <div class="flex items-center gap-2.5">
-          <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <div class="flex h-9 w-9 items-center justify-center rounded-md bg-primary/10 text-primary">
             <Icon name="credit-card" :size="20" />
           </div>
           <div>
@@ -20,29 +20,29 @@
       </div>
 
       <!-- Tap Animation Visual Container -->
-      <div class="relative overflow-hidden rounded-xl border border-border bg-background p-6 text-center space-y-4">
+      <div class="relative overflow-hidden rounded-lg border border-border bg-background p-5 text-center space-y-3">
         <!-- Pulse Animation -->
-        <div class="relative mx-auto flex h-24 w-24 items-center justify-center">
+        <div class="relative mx-auto flex h-20 w-20 items-center justify-center">
           <div v-if="scanning" class="absolute inset-0 animate-ping rounded-full bg-primary/20" />
-          <div v-if="scannedCard" class="flex h-20 w-20 items-center justify-center rounded-full bg-success/20 text-success border-2 border-success">
-            <Icon name="check-circle" :size="40" />
+          <div v-if="scannedCard" class="flex h-16 w-16 items-center justify-center rounded-full bg-success/20 text-success border-2 border-success">
+            <Icon name="check-circle" :size="32" />
           </div>
-          <div v-else class="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary border-2 border-primary/40">
-            <Icon name="credit-card" :size="36" />
+          <div v-else class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary border-2 border-primary/40">
+            <Icon name="credit-card" :size="30" />
           </div>
         </div>
 
         <div>
-          <h4 class="text-sm font-bold text-text-primary">
+          <h4 class="text-xs font-bold text-text-primary">
             {{ scannedCard ? 'Kartu Terdeteksi & Terbaca!' : 'Menunggu Tap Kartu RFID...' }}
           </h4>
-          <p class="text-xs text-text-muted mt-0.5">
+          <p class="text-[11px] text-text-muted mt-0.5">
             {{ scannedCard ? `UID: ${scannedCard.uid}` : 'Tempelkan fisik kartu fisik ke pembaca USB/NFC' }}
           </p>
         </div>
 
         <!-- Simulation Button for Demo/Testing -->
-        <div class="pt-2">
+        <div class="pt-1">
           <button
             v-if="!scannedCard"
             class="btn btn-outline btn-primary btn-xs font-bold w-full"
@@ -50,14 +50,14 @@
           >
             [ 💳 SIMULASI TAP KARTU RFID ]
           </button>
-          <div v-else class="rounded-lg bg-success/10 p-2 text-xs font-bold text-success border border-success/20">
+          <div v-else class="rounded-md bg-success/10 p-2 text-xs font-bold text-success border border-success/20">
             Status: {{ mode === 'pair' ? 'Kartu Siap Diserahkan ke Tamu' : `Terhubung ke Kamar ${scannedCard.roomNumber} (${scannedCard.guestName})` }}
           </div>
         </div>
       </div>
 
       <!-- Rincian Data Pairing RFID -->
-      <div v-if="scannedCard" class="space-y-2 text-xs rounded-xl border border-border bg-surface p-3.5">
+      <div v-if="scannedCard" class="space-y-1.5 text-xs rounded-lg border border-border bg-surface p-3">
         <div class="flex justify-between">
           <span class="text-text-muted">Kode UID Kartu:</span>
           <span class="font-mono font-bold text-primary">{{ scannedCard.uid }}</span>
@@ -80,7 +80,7 @@
       <div class="flex gap-2 pt-2 border-t border-border">
         <button class="btn btn-ghost btn-sm flex-1 text-xs" @click="close">Batal</button>
         <button
-          class="btn btn-primary btn-sm flex-1 text-xs font-bold text-white shadow"
+          class="btn btn-primary btn-sm flex-1 text-xs font-bold text-white shadow-sm"
           :disabled="!scannedCard"
           @click="confirmRfidAction"
         >

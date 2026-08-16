@@ -39,7 +39,7 @@
           <span class="text-xs font-semibold">{{ currentRoleLabel }}</span>
           <Icon name="chevron-down" :size="12" class="text-text-muted" />
         </summary>
-        <ul class="dropdown-content menu bg-surface border border-border rounded-xl z-50 w-60 p-1.5 shadow-xl mt-2 space-y-1">
+        <ul class="dropdown-content menu bg-surface border border-border rounded-lg z-50 w-60 p-1.5 shadow-xl mt-2 space-y-1">
           <li class="menu-title px-2 py-1 text-[10px] font-bold tracking-wider text-text-muted uppercase">
             {{ t('switch_account') }}
           </li>
@@ -166,7 +166,7 @@
         </span>
         <Icon name="chevron-down" :size="12" class="text-text-muted hidden md:inline" />
       </summary>
-      <ul class="dropdown-content menu bg-surface border border-border rounded-xl z-50 w-52 p-1.5 shadow-lg mt-2 space-y-0.5">
+      <ul class="dropdown-content menu bg-surface border border-border rounded-lg z-50 w-52 p-1.5 shadow-lg mt-2 space-y-0.5">
         <li class="menu-title px-2 py-1 text-[10px] font-bold text-text-muted uppercase">Active Account</li>
         <li><a class="text-xs py-2 rounded-lg" @click="router.push('/settings')"><Icon name="user" :size="14" /> {{ t('profile') }}</a></li>
         <li><a class="text-xs py-2 rounded-lg" @click="router.push('/settings')"><Icon name="sliders-horizontal" :size="14" /> {{ t('preferences') }}</a></li>

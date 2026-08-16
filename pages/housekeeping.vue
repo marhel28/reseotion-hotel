@@ -6,35 +6,35 @@
     <!-- 2. KPI Strip -->
     <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
       <!-- Rooms to Clean -->
-      <div class="rounded-xl border border-border bg-surface p-4 shadow-sm">
+      <div class="rounded-lg border border-border bg-surface p-4">
         <p class="text-xs font-medium uppercase tracking-wide text-text-muted">
           {{ t('rooms_to_clean') }}
         </p>
         <p class="mt-2 text-2xl font-semibold text-text-primary">{{ kpi.toClean }}</p>
       </div>
       <!-- Cleaning -->
-      <div class="rounded-xl border border-border bg-surface p-4 shadow-sm">
+      <div class="rounded-lg border border-border bg-surface p-4">
         <p class="text-xs font-medium uppercase tracking-wide text-text-muted">
           {{ t('cleaning') }}
         </p>
         <p class="mt-2 text-2xl font-semibold text-text-primary">{{ kpi.cleaning }}</p>
       </div>
       <!-- Clean -->
-      <div class="rounded-xl border border-border bg-surface p-4 shadow-sm">
+      <div class="rounded-lg border border-border bg-surface p-4">
         <p class="text-xs font-medium uppercase tracking-wide text-text-muted">
           {{ t('clean') }}
         </p>
         <p class="mt-2 text-2xl font-semibold text-text-primary">{{ kpi.clean }}</p>
       </div>
       <!-- Inspected -->
-      <div class="rounded-xl border border-border bg-surface p-4 shadow-sm">
+      <div class="rounded-lg border border-border bg-surface p-4">
         <p class="text-xs font-medium uppercase tracking-wide text-text-muted">
           {{ t('inspected') }}
         </p>
         <p class="mt-2 text-2xl font-semibold text-text-primary">{{ kpi.inspected }}</p>
       </div>
       <!-- Maintenance -->
-      <div class="rounded-xl border border-border bg-surface p-4 shadow-sm">
+      <div class="rounded-lg border border-border bg-surface p-4">
         <p class="text-xs font-medium uppercase tracking-wide text-text-muted">
           {{ t('maintenance') }}
         </p>

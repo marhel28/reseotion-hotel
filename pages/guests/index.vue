@@ -20,7 +20,7 @@
     </PageHeader>
 
     <!-- Guests Table -->
-    <div class="rounded-xl border border-border bg-surface shadow-sm overflow-hidden">
+    <div class="rounded-lg border border-border bg-surface overflow-hidden">
       <div class="overflow-x-auto">
         <table class="table table-zebra table-compact w-full text-sm">
           <thead>
@@ -40,7 +40,6 @@
               v-for="row in paginatedRows"
               :key="row.id"
               class="hover:bg-surface-hover transition-colors"
-              :class="row.vip && 'border-l-4 border-l-amber-500'"
               @click="navigateTo(`/guests/${row.id}`)"
               style="cursor: pointer"
             >

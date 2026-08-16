@@ -18,7 +18,7 @@
     </div>
 
     <!-- Papan Matrix Status Kamar Real-Time (Visual 1-Glance Awareness) -->
-    <div class="rounded-xl border border-border bg-surface p-5 shadow-sm space-y-3">
+    <div class="rounded-lg border border-border bg-surface p-5 space-y-3">
       <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-border pb-2.5">
         <div class="flex items-center gap-2">
           <Icon name="layout-grid" :size="16" class="text-info" />
@@ -86,7 +86,7 @@
 
       <!-- ==================== TODAY'S ARRIVALS ==================== -->
       <div v-show="activeTab==='arrivals'" role="tabpanel" class="tab-content pt-4">
-        <div class="rounded-xl border border-border bg-surface shadow-sm overflow-hidden">
+        <div class="rounded-lg border border-border bg-surface overflow-hidden">
           <div class="flex items-center justify-between border-b border-border px-5 py-3">
             <h2 class="text-sm font-bold text-text-primary uppercase tracking-wide">{{ t('todays_arrivals') }}</h2>
             <span class="rounded-full bg-info/10 px-2.5 py-0.5 text-xs font-bold text-info">
@@ -141,7 +141,7 @@
 
       <!-- ==================== TODAY'S DEPARTURES ==================== -->
       <div v-show="activeTab==='departures'" role="tabpanel" class="tab-content pt-4">
-        <div class="rounded-xl border border-border bg-surface shadow-sm overflow-hidden">
+        <div class="rounded-lg border border-border bg-surface overflow-hidden">
           <div class="flex items-center justify-between border-b border-border px-5 py-3">
             <h2 class="text-sm font-bold text-text-primary uppercase tracking-wide">{{ t('todays_departures') }}</h2>
             <span class="rounded-full bg-warning/10 px-2.5 py-0.5 text-xs font-bold text-warning">
@@ -194,7 +194,7 @@
 
       <!-- ==================== CURRENT GUESTS ==================== -->
       <div v-show="activeTab==='guests'" role="tabpanel" class="tab-content pt-4">
-        <div class="rounded-xl border border-border bg-surface shadow-sm overflow-hidden">
+        <div class="rounded-lg border border-border bg-surface overflow-hidden">
           <div class="flex items-center justify-between border-b border-border px-5 py-3">
             <h2 class="text-sm font-bold text-text-primary uppercase tracking-wide">{{ t('current_guests') }}</h2>
             <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary">
@@ -244,7 +244,7 @@
 
     <!-- ==================== INSTANT WALK-IN BOOKING MODAL (Cepat In-Place) ==================== -->
     <dialog ref="quickBookModalRef" class="modal">
-      <div class="modal-box bg-surface border border-border max-w-lg rounded-xl p-5 shadow-2xl space-y-4">
+      <div class="modal-box bg-surface border border-border max-w-lg rounded-lg p-5 space-y-4">
         <div class="flex items-center justify-between border-b border-border pb-3">
           <div>
             <h3 class="text-base font-bold text-primary">Reservasi Cepat (Walk-in / Telepon)</h3>
